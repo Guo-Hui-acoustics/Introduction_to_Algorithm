@@ -42,6 +42,37 @@
 \usepackage{nameref} 
 
 
+% 分形树
+\newcommand{\fractaltree}[4]{
+    % 检查递归深度 (必须是整数)
+    \ifnum#1>0
+        % --- 绘制当前树枝 ---
+        % 根据深度计算颜色 (从棕色渐变到绿色)
+        \pgfmathsetmacro{\levelcolor}{80 - (#1*7)} 
+        % 根据深度计算粗细 (主干粗, 树梢细)
+        \pgfmathsetmacro{\linewidth}{#1*0.2 + 0.3} 
+        \draw[
+            color=green!\levelcolor!black!70!brown, 
+            line width=\linewidth pt,
+            rounded corners=1pt % 让连接处更平滑
+        ] 
+            (0,0) -- ++(#4:#3)          % 从 (0,0) 向 #4 方向绘制 #3 长度
+            coordinate (tip);           % 在树枝末端设置一个坐标, 命名为 (tip)
+        % --- 递归步骤 ---
+        \begin{scope}[shift=(tip)]
+            % 使用 \pgfmathtruncatemacro 确保 \newlevel 是整数 (修复 \ifnum 错误)
+            \pgfmathtruncatemacro{\newlevel}{#1-1}
+            \pgfmathsetmacro{\newlength}{#3 * 0.7}      % 长度缩短
+            \pgfmathsetmacro{\leftangle}{#4 + #2}       % 左分支角度
+            \pgfmathsetmacro{\rightangle}{#4 - #2}      % 右分支角度
+            
+            % 调用自己两次, 来绘制两个子分支
+            \fractaltree{\newlevel}{#2}{\newlength}{\leftangle}
+            \fractaltree{\newlevel}{#2}{\newlength}{\rightangle}
+        \end{scope}
+    \fi
+}
+
 % 2. 为封面页定义新的存储命令
 \newcommand{\notetitle}[1]{\def\@notetitle{#1}}
 \newcommand{\noteauthor}[1]{\def\@noteauthor{#1}}
@@ -69,7 +100,14 @@
             % 4. 中心"图像" (临时占位符)
             \vspace{0.2cm} % 顶部横线下的间距
             \begin{center}
-                {\fontsize{60}{72}\selectfont \bfseries Introductio to Algorithm}
+                % --- TikZ 图像开始 (绘制分形树) ---
+                \begin{tikzpicture}[
+                    scale=0.08 % <--- 在这里调整树的整体大小以适应封面
+                ]
+                    % \fractaltree{level}{angle}{length}{direction}
+                    % (我们使用较小的主干长度, 因为 'scale' 已经放大了所有东西)
+                    \fractaltree{10}{28}{1.2cm}{90} 
+                \end{tikzpicture}
             \end{center}
             \vspace{0.2cm} % 底部横线上的间距
         \end{minipage}

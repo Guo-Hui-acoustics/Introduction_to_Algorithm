@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  25 OCT 2025 18:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  26 OCT 2025 16:35
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -888,10 +888,6 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 24.88pt on input line 24.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 14.4pt on input line 24.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 60.0pt on input line 24.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 60.0pt on input line 24.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
  (d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -956,15 +952,15 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 18B427086F70ED83B16406B09E4906E5;283.
  ) 
 Here is how much of TeX's memory you used:
- 39220 strings out of 474116
- 912610 string characters out of 5735645
- 1930190 words of memory out of 5000000
- 60916 multiletter control sequences out of 15000+600000
- 593640 words of font info for 72 fonts, out of 8000000 for 9000
+ 39449 strings out of 474116
+ 917545 string characters out of 5735645
+ 2373190 words of memory out of 5000000
+ 61145 multiletter control sequences out of 15000+600000
+ 587902 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,5n,145p,722b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,6n,145p,722b,1593s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/newtx/ztmb.pfb><d:/LenovoSoftstore/TexLive/texlive/2024/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on main.pdf (5 pages, 99824 bytes).
+Output written on main.pdf (5 pages, 116290 bytes).
 PDF statistics:
  73 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream
